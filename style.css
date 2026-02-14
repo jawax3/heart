@@ -1,4 +1,4 @@
-canvas{
+canvas {
     position: absolute;
     left: 0;
     top: 0;
@@ -24,21 +24,27 @@ body {
     z-index: 10;
     color: #ff4d6d;
     font-family: 'Dancing Script', cursive;
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 8vw, 3rem);
+    /* Ukuran adaptif: min 1.5rem, max 3rem */
     text-shadow: 0 0 10px rgba(255, 77, 109, 0.8), 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-align: center;
     pointer-events: none;
     animation: pulseText 2s ease-in-out infinite;
     width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 @keyframes pulseText {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(-50%) scale(1);
         opacity: 0.8;
     }
+
     50% {
-        transform: translateY(-50%) scale(1.1);
+        transform: translateY(-50%) scale(1.05);
         opacity: 1;
         text-shadow: 0 0 20px rgba(255, 77, 109, 1);
     }
